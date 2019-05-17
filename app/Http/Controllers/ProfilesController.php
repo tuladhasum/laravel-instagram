@@ -65,10 +65,16 @@ class ProfilesController extends Controller
       if (request('image')) {
          $imagePath = request('image')->store('profile', 'public');
 
-         $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
-         $image->save();
+         $image = \Cloudinary\Uploader::upload( request('image'),[
+            'folder' => "profile"
+         ]);
 
-         $imageArray = ['image' => $imagePath];
+         // dd($image['url']);
+         // $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+         // $image->save();
+
+         $imageArray = ['image' => $image['url']];
+         // $imageArray = ['image' => $imagePath];
       }
 
       auth()->user()->profile->update(array_merge(

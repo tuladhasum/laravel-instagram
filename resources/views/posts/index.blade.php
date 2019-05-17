@@ -6,7 +6,8 @@
          <div class="row">
             <div class="col-6 offset-3">
                <a href="/profile/{{$post->user->id}}">
-                  <img src="/storage/{{$post->image}}" class="w-100 " alt="">
+                  {{-- <img src="/storage/{{$post->image}}" class="w-100 " alt=""> --}}
+                  <img src="{{$post->image}}" class="w-100 " alt="">
                </a>
             </div>
          </div>

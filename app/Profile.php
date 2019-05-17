@@ -13,7 +13,8 @@ class Profile extends Model
    {
       $imagePath = ($this->image) ?  $this->image : 'profile/gxGjwHMbyaiVPFr9J6rpNhjGqM5C7wBmY6HZEZXG.png';
 //      dd($imagePath);
-      return '/storage/' . $imagePath;
+      // return '/storage/' . $imagePath;
+      return $imagePath;
    }
 
    public function user()

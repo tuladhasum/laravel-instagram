@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -17,6 +18,7 @@ class PostsController extends Controller
    {
       $users = auth()->user()->following()->pluck('profiles.user_id');
       $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(10);
+
       return view('posts.index',compact('posts'));
    }
 
@@ -32,15 +34,19 @@ class PostsController extends Controller
          'image' => 'required|image'
       ]);
 
-      $imagePath = request('image')->store('uploads','public');
-      $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200,1200);
+      // $imagePath = request('image')->store('uploads','public');
+      // $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200,1200);
 
-      $image->save();
+      // $image->save();
+
+      $imagePath = \Cloudinary\Uploader::upload(request('image'), [
+         'folder' =>  "posts/" . auth()->user()->id
+      ]);
 
       // Created authenticated post
       auth()->user()->posts()->create([
          'caption' => $data['caption'],
-         'image' => $imagePath,
+         'image' => $imagePath['url'],
       ]);
 
       return redirect('/profile/'. auth()->user()->id);
