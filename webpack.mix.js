@@ -17,7 +17,8 @@ const mix = require('laravel-mix');
 //https://laravel-mix.com/docs/4.0/css-preprocessors
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
-   .sass('resources/sass/bulma.scss', 'public/css');
+   .sass('resources/sass/bulma.scss', 'public/css')
+   .js('resources/js/bulma.js', 'public/js');
 
 
 if (mix.inProduction()) {
