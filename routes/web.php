@@ -54,7 +54,12 @@ Route::group(['prefix'=>'test'],function(){
       return view('sandbox.vue');
    });
 
+   Route::get('/bulma', function(){
+      return view('sandbox.bulma');
+   });
+
    Route::get('/email', function(){
+      // Illuminate\Support\Facades\Mail::to('sumittuladhar@gmail.com')->send(new \App\Mail\ContactMail);
       return new \App\Mail\NewUserWelcomeMail();
    });
 

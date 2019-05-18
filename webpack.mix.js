@@ -11,9 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
+//https://laravel-mix.com/docs/4.0/copying-files
 // mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
+
+//https://laravel-mix.com/docs/4.0/css-preprocessors
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+   .sass('resources/sass/bulma.scss', 'public/css');
 
 
 if (mix.inProduction()) {
