@@ -25,6 +25,7 @@
         "bulma": "^0.7.4"
     },
     "dependencies": {
-        "select2": "^4.0.7"
+        "select2": "^4.0.7",
+        "simplemde": "^1.11.2"
     }
 }

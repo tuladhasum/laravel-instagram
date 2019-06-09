@@ -11,7 +11,7 @@
    <script src="{{ mix('js/bulma.js') }}" defer></script>
 </head>
 <body>
-@include('partials.bulmanav')
+@include('layouts.partials.bulmanav')
 <div class="container">
    @yield('content')
 </div>

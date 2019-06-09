@@ -18,6 +18,11 @@ class ArticleController extends Controller
 
    }
 
+   public function indexApi()
+   {
+      return Category::with('articles')->paginate();
+   }
+
 
    /**
     * Show the form for creating a new resource.

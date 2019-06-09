@@ -27,7 +27,10 @@
             @endforeach
          </div>
       @endforeach
+
       <flash message="{{session('flash')}}" type="info"></flash>
    </div>
+
+
    </div>
 @endsection

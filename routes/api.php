@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/crud', 'CrudController',[
    'except' => ['edit','show','store']
 ]);
+
+Route::get('/kb', 'ArticleController@indexApi');

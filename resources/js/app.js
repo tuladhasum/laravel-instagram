@@ -27,7 +27,10 @@ Vue.component('follow-button', require('./components/FollowButton.vue').default)
 Vue.component('sandbox-example', require('./components/SandboxExample.vue').default);
 Vue.component('like-button', require('./components/LikeButton.vue').default);
 Vue.component('app', require('./components/App').default);
-Vue.component('flash', require('./components/Flash').default);
+Vue.component('flash', require('./components/Flash.vue').default);
+
+Vue.component('craigslist', require('./components/cj/Craigslist.vue').default);
+Vue.component('quiz', require('./components/quiz/Quiz.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

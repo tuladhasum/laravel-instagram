@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+   <link rel="stylesheet" href="{{asset('vendor/simplemde/simplemde.min.css')}}">
+   <script src="{{asset('vendor/simplemde/simplemde.min.js')}}"></script>
    <div class="container">
 
       <nav aria-label="breadcrumb">
@@ -50,4 +52,11 @@
       </div>
    </div>
    </div>
+
+   <small>Simple MDE from https://github.com/sparksuite/simplemde-markdown-editor</small>
+
+   <script>
+      // var simplemde = new SimpleMDE();
+      // simplemde.value("This text will appear in the editor")
+   </script>
 @endsection
