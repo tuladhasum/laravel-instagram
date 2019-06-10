@@ -23,3 +23,7 @@ Route::resource('/crud', 'CrudController',[
 ]);
 
 Route::get('/kb', 'ArticleController@indexApi');
+
+
+Route::get('/todos', 'TodoController@indexApi');
+Route::post('/todos', 'TodoController@store');
